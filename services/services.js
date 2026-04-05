@@ -1,7 +1,7 @@
 import * as dao from "../dao/dao.js";
 
-export const listar = () => {
-    return dao.listarTodos();
+export const listar = (categoria, ordem) => {
+    return dao.listarTodos(categoria, ordem);
 }
 
 export const buscarPorId = (id) => {

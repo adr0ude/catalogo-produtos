@@ -6,8 +6,8 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
-app.use(router);
+app.use("/produtos", router);
 
 app.listen(PORT, () => {
-    console.log(`O servidor está rodando na porta ${PORT}`)
+    console.log(`O servidor está rodando na porta http://localhost:${PORT}/produtos`)
 });

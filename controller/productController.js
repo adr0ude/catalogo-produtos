@@ -1,7 +1,6 @@
 import * as service from "../services/services.js";
 
 export const listar = (req, res) => {
-    // Captura os query params da URL
     const { categoria, ordem } = req.query;
     const produtos = service.listar(categoria, ordem);
     res.json(produtos);
@@ -22,7 +21,6 @@ export const criar = (req, res) => {
         const produto = service.criar(req.body);
         res.status(201).json(produto);
     } catch (erro) {
-        // CORREÇÃO: era req.status, agora é res.status
         res.status(400).json({erro: erro.message});
     }
 }

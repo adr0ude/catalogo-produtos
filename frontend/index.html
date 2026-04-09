@@ -11,7 +11,17 @@
         <header class="Top-bar">
             <h1>Lista de produtos</h1>
             <div class="seach">
-                <input type="text" placeholder="pesquisar estoque">
+                <input id="busca" type="text" placeholder="Pesquisar produto">
+
+                <select id="filtroCategoria">
+                    <option value="">Todas as categorias</option>
+                </select>
+
+                <select id="ordenarPreco">
+                    <option value="">Ordenar preço</option>
+                    <option value="asc">Menor → Maior</option>
+                    <option value="desc">Maior → Menor</option>
+                </select>
             </div>
         </header>
 

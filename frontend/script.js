@@ -5,9 +5,56 @@ async function carregarProdutos() {
     const res = await fetch(API);
     const produtos = await res.json();
     const lista = document.getElementById("lista");
+
+    const buscaInput = document.getElementById("busca");
+    const filtroCategoria = document.getElementById("filtroCategoria");
+    const ordenarPreco = document.getElementById("ordenarPreco");
+    
+    const categoriaAtual = filtroCategoria.value;
+    const categorias = [...new Set(produtos.map(p => p.categoria))];
+
+    filtroCategoria.innerHTML = `<option value="">Todas categorias</option>`;
+
+    categorias.forEach(c => {
+        const option = document.createElement("option");
+        option.value = c;
+        option.textContent = c;
+
+        if (c === categoriaAtual) {
+            option.selected = true;
+        }
+
+        filtroCategoria.appendChild(option);
+    });
+
+    
     lista.innerHTML = "";
 
-    produtos.forEach(p => {
+    let filtrados = [...produtos];
+
+    const busca = buscaInput?.value.toLowerCase() || "";
+    const categoria = filtroCategoria.value;
+    const ordem = ordenarPreco.value;
+
+    if (busca) {
+        filtrados = filtrados.filter(p => 
+            p.nome.toLowerCase().includes(busca)
+        );
+    }
+
+    if (categoria) {
+        filtrados = filtrados.filter(p =>
+            p.categoria === categoria
+        );
+    }
+
+    if (ordem === "asc") {
+        filtrados.sort((a, b) => a.preco - b.preco);
+    } else if (ordem === "desc") {
+        filtrados.sort((a, b) => b.preco - a.preco);
+    }
+
+    filtrados.forEach(p => {
         const li = document.createElement("li");
         li.innerHTML = `
             <div class="card-content">
@@ -95,4 +142,12 @@ document.getElementById("formEditar").addEventListener("submit", async (e) => {
     carregarProdutos();
 });
 
-carregarProdutos();
+
+// Exibir Produtos
+document.addEventListener("DOMContentLoaded", () => {
+    carregarProdutos();
+
+    document.getElementById("busca").addEventListener("input", carregarProdutos);
+    document.getElementById("filtroCategoria").addEventListener("change", carregarProdutos);
+    document.getElementById("ordenarPreco").addEventListener("change", carregarProdutos);
+});

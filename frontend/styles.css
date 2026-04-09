@@ -31,6 +31,14 @@ body {
 }
 
 
+.seach select {
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    outline: none;
+}
+
 .Principal {
     display: flex;
     padding: 30px 5%;
@@ -225,4 +233,107 @@ button {
 @keyframes animacaoModal {
     from { transform: translateY(-50px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 1024px) {
+
+    .Principal {
+        flex-direction: column;
+    }
+
+    .formulario {
+        width: 100%;
+        order: -1;
+    }
+
+    .lista {
+        width: 100%;
+        order: 1;
+    }
+
+    .Top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .seach {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .seach input {
+        width: 100%;
+    }
+
+    .seach select {
+        flex: 1;
+        min-width: 150px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .Top-bar {
+        padding: 15px;
+    }
+
+    .Principal {
+        padding: 20px 15px;
+    }
+
+    #lista li {
+        padding: 20px;
+    }
+
+    .card-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .info-lateral {
+        width: 100%;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .acoes {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .preco-box {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .seach {
+        flex-direction: column;
+    }
+
+    .seach input,
+    .seach select {
+        width: 100%;
+    }
+
+    .nome-produto {
+        font-size: 18px;
+    }
+
+    .preco-valor {
+        font-size: 20px;
+    }
+
+    .acoes {
+        flex-direction: column;
+    }
+
+    .acoes button {
+        width: 100%;
+    }
 }

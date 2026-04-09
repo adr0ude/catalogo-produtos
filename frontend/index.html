@@ -4,19 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Produtos</title>
+   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <h1>Lista de produtos</h1>
+    <div class="container">
+        <header class="Top-bar">
+            <h1>Lista de produtos</h1>
+            <div class="seach">
+                <input type="text" placeholder="pesquisar estoque">
+            </div>
+        </header>
 
-    <form id="formProduto">
-        <input type="text" id="nome" placeholder="Nome" required />
-        <input type="number" id="preco" placeholder="Preço" required />
-        <input type="text" id="categoria" placeholder="Categoria" required />
-        <input type="number" id="estoque" placeholder="Estoque" required />
-        <button type="submit">Cadastrar</button>
-    </form>
+        <main class="Principal">
+            <section class="lista">
+                <ul id="lista"></ul>
+            </section>
 
-    <ul id="lista"></ul>
+            <aside class="formulario">
+                <form id="formProduto">
+                    <h2>Cadastrar</h2>
+                    <p>Adicione um novo item.</p>
+
+                    <label>NOME DO PRODUTO</label>
+                    <input type="text" id="nome" placeholder="Nome" required />
+
+                    <div class="input-row">
+                        <div>
+                            <label>PREÇO (R$)</label>
+                            <input type="number" id="preco" placeholder="0,00" step="0.01" required />
+                        </div>
+                        <div>
+                            <label>ESTOQUE</label>
+                            <input type="number" id="estoque" placeholder="Qtd" required />
+                        </div>
+                    </div>
+
+                    <label>CATEGORIA</label>
+                    <input type="text" id="categoria" placeholder="Categoria" required />
+
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </aside>
+        </main>
+    </div>
+
+    <div id="modalEditar" class="modal">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2>Editar Produto</h2>
+                <span class="close" onclick="fecharModal()">&times;</span>
+            </header>
+            <form id="formEditar">
+                <input type="hidden" id="edit-id">
+                
+                <label>NOME DO PRODUTO</label>
+                <input type="text" id="edit-nome" required>
+
+                <div class="input-row">
+                    <div>
+                        <label>PREÇO (R$)</label>
+                        <input type="number" id="edit-preco" step="0.01" required>
+                    </div>
+                    <div>
+                        <label>ESTOQUE</label>
+                        <input type="number" id="edit-estoque" required>
+                    </div>
+                </div>
+
+                <label>CATEGORIA</label>
+                <input type="text" id="edit-categoria" required>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
+                    <button type="submit" class="btn-salvar-modal">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

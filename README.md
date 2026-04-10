@@ -28,13 +28,13 @@ O projeto segue o padrão de **arquitetura em camadas**, promovendo facilidade d
 
 A API suporta filtros inteligentes por categoria e ordenação por preço via Query Params.
 
-| Método | Rota            | Descrição                      | Parâmetros (Query)   |
-| ------ | --------------- | ------------------------------ | -------------------- |
-| GET    | `/produtos`     | Listar todos os produtos       | `categoria`, `ordem` |
-| GET    | `/produtos/:id` | Buscar um produto pelo ID      | -                    |
-| POST   | `/produtos`     | Cadastrar novo produto         | -                    |
-| PUT    | `/produtos/:id` | Atualizar produto existente    | -                    |
-| DELETE | `/produtos/:id` | Remover um produto do catálogo | -                    |
+| Método | Rota            | Descrição                      |
+| ------ | --------------- | ------------------------------ |
+| GET    | `/produtos`     | Listar todos os produtos       |
+| GET    | `/produtos/:id` | Buscar um produto pelo ID      |
+| POST   | `/produtos`     | Cadastrar novo produto         |
+| PUT    | `/produtos/:id` | Atualizar produto existente    |
+| DELETE | `/produtos/:id` | Remover um produto do catálogo |
 
 ## Interface
 

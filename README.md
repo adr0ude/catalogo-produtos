@@ -49,7 +49,7 @@ O sistema conta com um dashboard intuitivo desenvolvido para facilitar a gestão
 ### 1️⃣ Clonar o repositório
 
 ```bash
-git clone [https://github.com/adr0ude/catalogo-produtos](https://github.com/adr0ude/catalogo-produtos)
+git clone https://github.com/adr0ude/catalogo-produtos
 cd catalogo-produtos
 ```
 
@@ -64,13 +64,16 @@ npm install
 ```bash
 npm start
 ```
+O servidor estará rodando em: `http://localhost:3000`
 
 ### 4️⃣ Acessar o Frontend
+Você pode abrir o arquivo `frontend/index.html` diretamente no seu navegador ou, caso tenha o Python instalado, rodar:
 
 ```bash
 cd frontend
 python -m http.server 8000
 ```
+Acesse em: `http://localhost:8000`
 
 ## Equipe
 

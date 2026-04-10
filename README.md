@@ -17,13 +17,13 @@ O projeto foi construído seguindo uma **arquitetura em camadas**, garantindo a 
 O projeto segue o padrão de **arquitetura em camadas**, promovendo facilidade de manutenção e escalabilidade.
 
 /
-├── controller/ → Recebe as requisições HTTP e envia as respostas
-├── dao/ → Data Access Object: Camada de manipulação direta dos dados
-├── data/ → Arquivo de dados inicial (Mock data)
-├── frontend/ → Interface do usuário (HTML, CSS, Script)
-├── routes/ → Definição das rotas e caminhos da API
-├── services/ → Regras de negócio e validações do sistema
-└── index.js → Ponto de entrada da aplicação
+├── controller/ → Recebe as requisições HTTP e envia as respostas  
+├── dao/ → Data Access Object: Camada de manipulação direta dos dados  
+├── data/ → Arquivo de dados inicial (Mock data)  
+├── frontend/ → Interface do usuário (HTML, CSS, Script)  
+├── routes/ → Definição das rotas e caminhos da API  
+├── services/ → Regras de negócio e validações do sistema  
+└── index.js → Ponto de entrada da aplicação  
 
 ## Funcionalidades e Rotas da API
 

@@ -22,7 +22,7 @@ O projeto segue o padrão de **arquitetura em camadas**, promovendo facilidade d
 ├── frontend/ → Interface do usuário (HTML, CSS, Script)  
 ├── routes/ → Definição das rotas e caminhos da API  
 ├── services/ → Regras de negócio e validações do sistema  
-└── index.js → Ponto de entrada da aplicação  
+└── index.js → Ponto de entrada da aplicação
 
 ## Funcionalidades e Rotas da API
 
@@ -62,18 +62,20 @@ npm install
 ### 3️⃣ Executar o servidor
 
 ```bash
-npm start
+node server.js
 ```
+
 O servidor estará rodando em: `http://localhost:3000`
 
 ### 4️⃣ Acessar o Frontend
-Você pode abrir o arquivo `frontend/index.html` diretamente no seu navegador ou, caso tenha o Python instalado, rodar:
+
+Você pode abrir o arquivo `frontend/index.html` diretamente no seu navegador ou, caso queira utilizar um servidor local, rodar:
 
 ```bash
 cd frontend
-python -m http.server 8000
+npm install http-server
+http-server
 ```
-Acesse em: `http://localhost:8000`
 
 ## Equipe
 
